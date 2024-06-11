@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import QuotesGenrator from './components/Quotes';
+// import { Grid } from 'react-bootstrap';
 
 /**
  * Create Reacte Parent Component class for Random Quote Machine.
@@ -53,8 +54,10 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App" id="quote-box">
-        <QuotesGenrator quoteSelected={this.quoteSelected} setQuoteIndex={this.setQuoteIndex} />
+      <div className="d-flex justify-content-center align-items-center vh-100">
+        <div id="quote-box">
+        {this.quoteSelected ? <QuotesGenrator quoteSelected={this.quoteSelected} setQuoteIndex={this.setQuoteIndex} /> : null}
+        </div>
       </div>
     );
   }
